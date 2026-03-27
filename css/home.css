@@ -81,7 +81,7 @@ body {
 .wip p {
     margin: 0;
     padding: 0;
-    line-height: 1.5; /* keeps the text tight to the center */
+    line-height: 1.5; 
 }
 
 @media (max-width: 600px) 
