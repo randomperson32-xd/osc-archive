@@ -1,6 +1,9 @@
 .hero {
-  background: #486d86;
-  color: #ffffff;
+  background: url(../assets/home-header-tpot-sky.webp);
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  color: #485d71;
   padding: 100px 40px; 
   text-align: center;
   margin-bottom: 40px;
@@ -16,8 +19,12 @@
 
 .hero p {
   font-size: 1.2rem;
-  color: #ffffff;
+  color: #728291;
   margin-top: 10px;
+}
+
+.hero a {
+  color:#485d71;
 }
 
 @media (max-width: 600px) 

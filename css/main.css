@@ -1,10 +1,25 @@
+:root {
+    --hover: #415a77;
+    --accent: #50758b;
+    --fg: #ffffff;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+h1, p {
+  margin: 0;
+}
+
 body {
     font-family: 'Poppins', sans-serif; 
     font-size: 16px; 
     text-align: center;
     color: white;
-    background: #455b6a
+    background: #233344
 } 
+
 
 .navbar {
   width: 100%;
@@ -50,7 +65,8 @@ body {
   align-items: center;
   padding: 8px 0;
   gap: 10px;
-  border-radius: 14px;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
   font-size: 0.85rem;
   font-weight: bold;
   letter-spacing: 0.5px;
@@ -74,7 +90,7 @@ ul {
 }
 
 .main-content {
-  background: #486d86;
+  background: #31475e;
   color: #ffffff;
   padding: 24px 36px;
   text-align: center;
@@ -135,4 +151,92 @@ footer p {
     border: 1px solid rgba(168, 168, 168, 0.1);
     text-decoration: none !important; 
     white-space: nowrap; 
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    max-width: 500px;    
+    width: 80%;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .title-content {
+    max-width: 500px;    
+    width: 80%;
+    align-items: flex-start;
+    gap: 10px;
+    }
+    
+  .left-section { 
+      align-items: flex-start;
+      gap: 5px;
+  }
+  
+  h1 {
+      font-size: 1.8rem; 
+  }
+  .status {
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+}
+
+
+.title-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    background: #31475e;
+    color: #ffffff;
+    padding: 24px 36px;
+    border-radius: 20px;
+    margin: 20px auto;   
+    max-width: 1200px;
+    width: 90%;  
+    text-align: left; 
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.back-btn {
+    background: var(--hover);
+    color: var(--fg);
+    border: 1px solid var(--accent);
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.back-btn:hover {
+    background: #66778a;
+    color: #fff;
+}
+
+
+.title-content, 
+.main-content {
+    max-width: 1200px;
+    width: 90%;      
+    margin-left: auto;  
+    margin-right: auto; 
+    padding: 24px 36px; 
+    box-sizing: border-box; 
+}
+
+footer p {
+    color: #c1dbdc;
+    font-size: 0.85rem;
+    margin-top: 15px; 
+    margin-bottom: 10px;
 }
