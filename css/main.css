@@ -240,3 +240,19 @@ footer p {
     margin-top: 15px; 
     margin-bottom: 10px;
 }
+
+@media (max-width: 600px) {
+  .title-content {
+    max-width: 500px;    
+    width: 80%;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 10px;
+  }
+    
+  .left-section { 
+      align-items: flex-start;
+      gap: 5px;
+  }
+}
