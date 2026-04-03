@@ -102,3 +102,32 @@
 .parent-container {
   text-align: center;
 }
+
+.centered-flex-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    max-width: 1000px;
+    margin: 40px auto; 
+    padding: 0 20px;
+    gap: 30px;
+}
+
+.twowatch {
+  border-radius: 20px;
+  max-width: 100%;
+  height: auto;
+  width: 15%;
+}
+
+@media (max-width: 800px) {
+  .twowatch {
+    width: 38%;
+  }
+}
+@media (max-width: 570px) {
+  .twowatch {
+    width: 100%;
+  }
+}
