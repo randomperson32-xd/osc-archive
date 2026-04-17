@@ -123,11 +123,11 @@
 
 @media (max-width: 800px) {
   .twowatch {
-    width: 38%;
+    width: 35%;
   }
 }
 @media (max-width: 570px) {
   .twowatch {
-    width: 100%;
+    width: 50%;
   }
 }
