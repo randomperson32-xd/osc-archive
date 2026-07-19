@@ -242,3 +242,71 @@ footer p {
     margin-top: 15px; 
     margin-bottom: 10px;
 }
+
+/* table styles */
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th, td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  vertical-align: middle;
+}
+
+th {
+  background-color: var(--hover);
+  color: var(--fg);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+tr:nth-child(even) td {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+tr:hover td {
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.placeholder-two {
+  width: 100%;
+  max-width: 80px;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .placeholder-two {
+    max-width: 55px;
+  }
+}
+
+@media (max-width: 570px) {
+  .placeholder-two {
+    max-width: 40px;
+  }
+  
+  th, td {
+    padding: 10px 8px;
+    font-size: 0.85rem;
+  }
+}
