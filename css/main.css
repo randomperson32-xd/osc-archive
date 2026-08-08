@@ -1,10 +1,77 @@
-/* global */
-:root {
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+[data-blur="off"] .site-header {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+:root, [data-theme="nord"] {
   --bg: #2e3440;
+  --bg-card: #3b4252;
   --hover: #434c5e;
   --accent: #88c0d0;
   --fg: #eceff4;
   --text: #d8dee9;
+}
+
+[data-theme="green-dark"] {
+  --bg: #132a13;
+  --bg-card: #1f3a2b;
+  --hover: #31572c;
+  --accent: #4ade80;
+  --fg: #ecfdf5;
+  --text: #a7f3d0;
+}
+
+[data-theme="green-light"] {
+  --bg: #e8f5e9;
+  --bg-card: #ffffff;
+  --hover: #c8e6c9;
+  --accent: #2e7d32;
+  --fg: #1b5e20;
+  --text: #2e7d32;
+}
+
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --bg-card: #ffffff;
+  --hover: #e2e8f0;
+  --accent: #a4e1ff;
+  --fg: #0f172a;
+  --text: #334155;
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --bg-card: #1e1e1e;
+  --hover: #2d2d2d;
+  --accent: #7ab3f8;
+  --fg: #ffffff;
+  --text: #e0e0e0;
+}
+
+[data-theme="oled"] {
+  --bg: #000000;
+  --bg-card: #0a0a0a;
+  --hover: #1f1f1f;
+  --accent: #ffffff;
+  --fg: #ffffff;
+  --text: #cccccc;
+}
+
+[data-theme="yoyleberry"] {
+  --bg: #181024;
+  --bg-card: #26173b;
+  --hover: #3c235a;
+  --accent: #a855f7;
+  --fg: #f3e8ff;
+  --text: #d8b4fe;
 }
 
 *, *::before, *::after {
@@ -24,7 +91,7 @@ h1, p {
 }
 
 a {
-  color: #88c0d0; 
+  color: var(--accent); 
   text-decoration: none; 
 }
 
@@ -55,25 +122,25 @@ ul {
 .nav-logo {
   font-weight: bold;
   text-decoration: none;
-  color: #88c0d0;
+  color: var(--accent);
   letter-spacing: -1px;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #e5e9f0;
+  color: var(--fg);
   margin-left: 20px;
   font-size: 0.9rem;
   transition: color 0.2s;
 }
 
 .nav-links a:hover {
-  color: #8fbcbb; 
+  color: var(--accent); 
 }
 
 .wip {
-  background: #ebcb8b;
-  color: #2e3440;
+  background: var(--hover);
+  color: var(--fg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,6 +151,7 @@ ul {
   font-size: 0.85rem;
   font-weight: bold;
   letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .wip p {
@@ -93,18 +161,18 @@ ul {
 }
 
 .close-banner-btn {
-  background-color: #d08770;
-  color: #eceff4;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--accent);
   border-radius: 50px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  padding: 2px 8px;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition: all 0.2s ease;
 }
 
 .close-banner-btn:hover {
-  background-color: #ebcb8b;
-  color: #2e3440;
+  background-color: var(--accent);
+  color: var(--bg);
 }
 
 .close-banner-btn:active {
@@ -113,8 +181,8 @@ ul {
 
 /* main */
 .main-content {
-  background: #3b4252;
-  color: #eceff4;
+  background: var(--bg-card);
+  color: var(--fg);
   padding: 24px 36px;
   text-align: center;
   border-radius: 20px;
@@ -127,8 +195,8 @@ ul {
   display: flex;
   justify-content: space-between; 
   align-items: center; 
-  background: #3b4252;
-  color: #eceff4;
+  background: var(--bg-card);
+  color: var(--fg);
   padding: 24px 36px;
   border-radius: 20px;
   margin: 20px auto;   
@@ -172,8 +240,8 @@ ul {
 }
 
 .back-btn:hover {
-  background: #5e81ac;
-  color: #eceff4;
+  background: var(--accent);
+  color: var(--bg);
 }
 
 .badge-aa {
@@ -207,16 +275,16 @@ table {
   border-spacing: 0;
   margin-top: 25px;
   margin-bottom: 25px;
-  background: rgba(236, 239, 244, 0.03);
+  background: rgba(255, 255, 255, 0.02);
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(236, 239, 244, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 th, td {
   padding: 14px 16px;
   text-align: left;
-  border-bottom: 1px solid rgba(236, 239, 244, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   vertical-align: middle;
 }
 
@@ -230,11 +298,11 @@ th {
 }
 
 tr:nth-child(even) td {
-  background-color: rgba(236, 239, 244, 0.02);
+  background-color: rgba(255, 255, 255, 0.02);
 }
 
 tr:hover td {
-  background-color: rgba(236, 239, 244, 0.05);
+  background-color: rgba(255, 255, 255, 0.05);
   transition: background-color 0.2s ease;
 }
 
@@ -255,18 +323,18 @@ footer {
   text-align: center;
   padding: 40px 20px;
   margin-top: 40px;
-  border-top: 1px solid rgba(236, 239, 244, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 footer p {
-  color: #e5e9f0;
+  color: var(--text);
   font-size: 0.85rem;
   margin-top: 15px; 
   margin-bottom: 10px;
 }
 
 .footer-links a {
-  color: #81a1c1; 
+  color: var(--accent); 
   text-decoration: none;
   margin: 0 10px;
   font-size: 0.85rem;
@@ -274,10 +342,10 @@ footer p {
 }
 
 .footer-links a:hover {
-  color: #88c0d0;
+  color: var(--fg);
 }
 
-/* device frame sizes and stuff idk what to call this man */
+/* device frame sizes */
 @media (max-width: 800px) {
   .placeholder-two {
     max-width: 55px;
