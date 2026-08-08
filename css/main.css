@@ -101,6 +101,10 @@ ul {
   padding-left: 20px;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
 /* nav */
 .navbar {
   width: 100%;
