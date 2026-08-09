@@ -101,8 +101,10 @@ ul {
   padding-left: 20px;
 }
 
-@view-transition {
-  navigation: auto;
+@supports (navigation: auto) {
+  @view-transition {
+    navigation: auto;
+  }
 }
 
 /* nav */

@@ -23,6 +23,7 @@ window.resetWipBanner = function() {
   console.log('restored');
 };
 
+
 function applySettings() {
   const currentTheme = localStorage.getItem('site_theme') || 'nord';
   const currentBlur = localStorage.getItem('header_blur_enabled') || 'on';
@@ -65,4 +66,37 @@ document.addEventListener('DOMContentLoaded', () => {
       wipBanner.style.display = 'none';
     });
   }
+});
+
+
+
+document.addEventListener('click', async (e) => {
+  const link = e.target.closest('a');
+
+  if (
+    !link ||
+    link.origin !== location.origin ||
+    link.target === '_blank' ||
+    e.metaKey || e.ctrlKey || e.shiftKey || e.altKey
+  ) return;
+
+  if (!document.startViewTransition) return;
+
+  e.preventDefault();
+  const targetUrl = link.href;
+
+  const response = await fetch(targetUrl);
+  const html = await response.text();
+
+  const newDoc = new DOMParser().parseFromString(html, 'text/html');
+
+  const currentContainer = document.querySelector('main') || document.body;
+  const newContainer = newDoc.querySelector('main') || newDoc.body;
+
+  document.startViewTransition(() => {
+    currentContainer.innerHTML = newContainer.innerHTML;
+    document.title = newDoc.title;
+    history.pushState({}, '', targetUrl);
+    window.scrollTo(0, 0);
+  });
 });
